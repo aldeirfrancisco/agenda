@@ -16,18 +16,18 @@ public class FazConexao {
     public  Connection getConexao(){
     
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
           
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/"+"agendajava","root","");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/agendajava?useTimezone=true&serverTimezone=UTC","root","");
             System.out.println("estar conectado");
         } catch (Exception e) {
-            System.err.println("erro na conexao");
+            System.err.println("erro na conexao"  +e);
         }
     return conexao;
     }
-    public static void main(String... a){
+    public static void main(String[] a){
         FazConexao con = new FazConexao();
-    con.getConexao();
+        con.getConexao();
     
     }
     
