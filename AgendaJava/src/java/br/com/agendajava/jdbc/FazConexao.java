@@ -13,11 +13,11 @@ import java.sql.DriverManager;
 public class FazConexao {
     public Connection conexao;
     
-    public  Connection getConexao(){
+    public  Connection getConexao(){ //metodo que vai ser chamado em outra class
     
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-          
+            Class.forName("com.mysql.cj.jdbc.Driver");// drive de conexao
+          //a variavel vai receber o caminho do banco
             conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/agendajava?useTimezone=true&serverTimezone=UTC","root","");
             System.out.println("estar conectado");
         } catch (Exception e) {
@@ -25,7 +25,7 @@ public class FazConexao {
         }
     return conexao;
     }
-    public static void main(String[] a){
+    public static void main(String[] a){ //testando para ver si ta conectado
         FazConexao con = new FazConexao();
         con.getConexao();
     
