@@ -11,9 +11,9 @@ import java.sql.DriverManager;
 
 
 public class FazConexao {
-    public Connection conexao;
+    public static Connection conexao;
     
-    public  Connection getConexao(){ //metodo que vai ser chamado em outra class
+    public static Connection getConexao(){ //metodo que vai ser chamado em outra class
     
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");// drive de conexao

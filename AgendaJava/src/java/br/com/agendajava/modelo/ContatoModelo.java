@@ -16,7 +16,7 @@ public class ContatoModelo {
     private String sexo;
     private String telefone;
     private String rua;
-    private String conplemento;
+    private String complemento;
     private int numero;
     private String bairro;
     private String cidade;
@@ -70,12 +70,12 @@ public class ContatoModelo {
         this.rua = rua;
     }
 
-    public String getConplemento() {
-        return conplemento;
+    public String getComplemento() {
+        return complemento;
     }
 
-    public void setConplemento(String conplemento) {
-        this.conplemento = conplemento;
+    public void setComplemento(String conplemento) {
+        this.complemento = conplemento;
     }
 
     public int getNumero() {
