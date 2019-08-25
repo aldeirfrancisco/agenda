@@ -44,7 +44,7 @@ public class ContatoDao {
                     FazConexao.getConexao().close();//fecha a conexao
                 System.out.println("cadastrou");
         } catch (Exception e) {
-            System.out.println("nao cadastrou" + e);
+            System.err.println("nao cadastrou" + e);
         }
     }
 }

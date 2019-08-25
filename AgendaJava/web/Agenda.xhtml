@@ -10,41 +10,41 @@
         <h:form>
             <h:panelGrid columns="1">
                 <p:outputLabel value="nome"></p:outputLabel>
-                <p:inputText value="" size="50"></p:inputText>
+                <p:inputText value="#{contatobean.contMode.nome}" size="50"></p:inputText>
                 
                  <p:outputLabel value="email"></p:outputLabel>
-                <p:inputText value="" size="50"></p:inputText>
+                 <p:inputText value="#{contatobean.contMode.email}" size="50"></p:inputText>
                 
                  <p:outputLabel value="sexo"></p:outputLabel>
-                <p:inputText value="" size="20"></p:inputText>
+                 <p:inputText value="#{contatobean.contMode.sexo}" size="20"></p:inputText>
                 
                  <p:outputLabel value="telefone"></p:outputLabel>
-                <p:inputText value="" size="20"></p:inputText>
+                 <p:inputText value="#{contatobean.contMode.telefone}" size="20"></p:inputText>
                 
                  <p:outputLabel value="rua"></p:outputLabel>
-                <p:inputText value="" size="50"></p:inputText>
+                 <p:inputText value="#{contatobean.contMode.rua}" size="50"></p:inputText>
                 
                  <p:outputLabel value="conplemento"></p:outputLabel>
-                <p:inputText value="" size="50"></p:inputText>
+                 <p:inputText value="#{contatobean.contMode.complemento}" size="50"></p:inputText>
                 
                  <p:outputLabel value="numero"></p:outputLabel>
-                <p:inputText value="" size="20"></p:inputText>
+                 <p:inputText value="#{contatobean.contMode.numero}" size="20"></p:inputText>
                 
                  <p:outputLabel value="bairro"></p:outputLabel>
-                <p:inputText value="" size="50"></p:inputText>
+                 <p:inputText value="#{contatobean.contMode.bairro}" size="50"></p:inputText>
                 
                  <p:outputLabel value="cidade"></p:outputLabel>
-                <p:inputText value="" size="50"></p:inputText>
+                 <p:inputText value="#{contatobean.contMode.cidade}" size="50"></p:inputText>
                 
                  <p:outputLabel value="uf"></p:outputLabel>
-                <p:inputText value="" size="10"></p:inputText>
+                 <p:inputText value="#{contatobean.contMode.uf}" size="10"></p:inputText>
                 
                 
                 
                 
             </h:panelGrid> 
             <br/>
-            <p:commandButton value="salvar contato"></p:commandButton>
+            <p:commandButton value="salvar contato" action="#{contatobean.salvarDados()}" update="@form"></p:commandButton>
             <br/> <br/>
             <p:dataTable  emptyMessage="nenum contato cadastrado">
                 <p:column headerText=" nome">
