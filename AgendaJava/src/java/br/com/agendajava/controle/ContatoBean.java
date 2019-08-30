@@ -15,8 +15,12 @@ import javax.faces.bean.SessionScoped;
  @SessionScoped
 public class ContatoBean {
     private ContatoDao contDao = new ContatoDao();
-    private ContatoModelo contMode = new ContatoModelo();
+    private ContatoModelo contMode;
 
+    public ContatoBean (){
+     
+     contMode = new ContatoModelo();
+ }
     public ContatoDao getContDao() {
         return contDao;
     }
@@ -33,10 +37,9 @@ public class ContatoBean {
         this.contMode = contModelo;
     }
     public void salvarDados(){
-       if(contMode.getId() == null){
+      //if(contMode.getId() == null){
           contDao.salvar(contMode);
           contMode = new ContatoModelo();
-    }else{
-       }
+    
 }
  }

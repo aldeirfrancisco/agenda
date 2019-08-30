@@ -5,12 +5,14 @@
  */
 package br.com.agendajava.modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author aldeir
  */
-public class ContatoModelo {
-    private Integer id;
+public class ContatoModelo implements Serializable{
+    //private Integer id;
     private String nome;
     private String email;
     private String sexo;
@@ -22,14 +24,14 @@ public class ContatoModelo {
     private String cidade;
    private String uf;
     
-    public Integer getId() {
+   /* public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
-
+*/
     public String getNome() {
         return nome;
     }

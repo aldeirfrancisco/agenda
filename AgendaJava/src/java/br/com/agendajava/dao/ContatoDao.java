@@ -13,6 +13,8 @@ import br.com.agendajava.modelo.ContatoModelo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContatoDao {
     PreparedStatement pst;//prepara a conexao com obanco
@@ -22,7 +24,7 @@ public class ContatoDao {
     
     public void salvar(ContatoModelo cont){ //pega tudo do class contatoModelo e salva no banco
         //insert into mais nome da tabela do banco
-    sql = "INSERT INTO contato (nome,email,sexo,telefone,rua,complemento,numero,bairro,cidade,uf ) values(?,?,?,?,?,?,?,?,?,?)";
+    sql = "INSERT INTO contato (id, nome,email,sexo,telefone,rua,complemento,numero,barrio,cidade,uf )values(null,?,?,?,?,?,?,?,?,?,?)";
     
         try {
             //declarei uma variavel para receber a conexao com o banco
@@ -44,7 +46,38 @@ public class ContatoDao {
                     FazConexao.getConexao().close();//fecha a conexao
                 System.out.println("cadastrou");
         } catch (Exception e) {
-            System.err.println("nao cadastrou" + e);
+            System.out.println("nao cadastrou" + e);
         }
+    }
+    public List busca(){
+       this.sql = "select *from contato";
+        List<ContatoModelo> lista= new ArrayList<>();
+       
+        try {
+            conexao = FazConexao.getConexao();
+            pst = conexao.prepareStatement(sql);
+            rs =  pst.executeQuery();
+            
+            while(rs.next()){
+            ContatoModelo cont = new ContatoModelo();
+            cont.setNome(rs.getString("nome"));
+            cont.setEmail(rs.getString("email"));
+            cont.setSexo(rs.getString("sexo"));
+            cont.setTelefone(rs.getString("telefone"));
+            cont.setRua(rs.getString("rua"));
+            cont.setComplemento(rs.getString("complemento"));
+            cont.setNumero(rs.getInt("numero")); 
+            cont.setBairro(rs.getString("Bairro"));
+            cont.setCidade(rs.getString("cidade"));
+            cont.setUf(rs.getString("Uf"));
+            lista.add(cont);
+            
+            }
+            FazConexao.getConexao().close();
+        } catch (Exception e) {
+            System.err.println("erro na consulta da lista"+ e);
+        }
+       
+    return lista;
     }
 }

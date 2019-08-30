@@ -18,10 +18,10 @@ public class FazConexao {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");// drive de conexao
           //a variavel vai receber o caminho do banco
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/agendajava?useTimezone=true&serverTimezone=UTC","root","");
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/agendajava?useSSL=false&useTimezone=true&serverTimezone=UTC","root","");
             System.out.println("estar conectado");
         } catch (Exception e) {
-            System.err.println("erro na conexao"  +e);
+            System.err.println("erro na conexao"+e);
         }
     return conexao;
     }
