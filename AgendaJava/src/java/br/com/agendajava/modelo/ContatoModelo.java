@@ -111,11 +111,6 @@ public class ContatoModelo implements Serializable{
     public void setUf(String uf) {
         this.uf = uf;
     }
-
-    
-    
-        
-    
-        
+     
         
 }

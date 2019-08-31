@@ -74,6 +74,7 @@ public class ContatoDao {
             
             }
             FazConexao.getConexao().close();
+            System.out.println("buscou lista");
         } catch (Exception e) {
             System.err.println("erro na consulta da lista"+ e);
         }
