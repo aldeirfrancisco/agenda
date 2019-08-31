@@ -39,7 +39,7 @@ public class ContatoDao {
                pst.setString(5, cont.getRua());
                 pst.setString(6, cont.getCidade());
                 pst.setInt(7, cont.getNumero());
-                 pst.setString(8, cont.getBairro());
+                 pst.setString(8, cont.getBarrio());
                   pst.setString(9, cont.getCidade());
                    pst.setString(10, cont.getUf());
                            pst.execute();// aqui joga todos os dados no  banco
@@ -67,7 +67,7 @@ public class ContatoDao {
             cont.setRua(rs.getString("rua"));
             cont.setComplemento(rs.getString("complemento"));
             cont.setNumero(rs.getInt("numero")); 
-            cont.setBairro(rs.getString("Bairro"));
+            cont.setBarrio(rs.getString("barrio"));
             cont.setCidade(rs.getString("cidade"));
             cont.setUf(rs.getString("Uf"));
             lista.add(cont);

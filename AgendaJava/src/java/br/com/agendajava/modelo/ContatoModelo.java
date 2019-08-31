@@ -20,7 +20,7 @@ public class ContatoModelo implements Serializable{
     private String rua;
     private String complemento;
     private int numero;
-    private String bairro;
+    private String barrio;
     private String cidade;
    private String uf;
     
@@ -88,12 +88,12 @@ public class ContatoModelo implements Serializable{
         this.numero = numero;
     }
 
-    public String getBairro() {
-        return bairro;
+    public String getBarrio() {
+        return barrio;
     }
 
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setBarrio(String barrio) {
+        this.barrio = barrio;
     }
 
     public String getCidade() {

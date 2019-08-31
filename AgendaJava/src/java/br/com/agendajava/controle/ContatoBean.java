@@ -23,7 +23,7 @@ public class ContatoBean {
     
     public ContatoBean (){
      buscar();
-    // contMode = new ContatoModelo();
+    contMode = new ContatoModelo();
  }
     public ContatoDao getContDao() {
         return contDao;
