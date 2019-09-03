@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/aldeir/agenda/AgendaJava/web/Modelo.xhtml</file>
             <file>file:/C:/Users/aldeir/agenda/AgendaJava/src/java/br/com/agendajava/modelo/ContatoModelo.java</file>
             <file>file:/C:/Users/aldeir/agenda/AgendaJava/src/java/br/com/agendajava/dao/ContatoDao.java</file>
             <file>file:/C:/Users/aldeir/agenda/AgendaJava/src/java/br/com/agendajava/jdbc/FazConexao.java</file>
+            <file>file:/C:/Users/aldeir/agenda/AgendaJava/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/aldeir/agenda/AgendaJava/web/Agenda.xhtml</file>
             <file>file:/C:/Users/aldeir/agenda/AgendaJava/src/java/br/com/agendajava/controle/ContatoBean.java</file>
             <file>file:/C:/Users/aldeir/agenda/AgendaJava/web/index.xhtml</file>

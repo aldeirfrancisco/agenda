@@ -7,24 +7,25 @@ package br.com.agendajava.controle;
 
 import br.com.agendajava.dao.ContatoDao;
 import br.com.agendajava.modelo.ContatoModelo;
-import com.sun.javafx.scene.control.skin.VirtualFlow;
-import java.util.List;
+import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
-
- @ManagedBean(name = "contatobean")
- @SessionScoped
+@ManagedBean(name = "contatobean")
+@RequestScoped
 public class ContatoBean {
-     
-    private ContatoDao contDao = new ContatoDao();
-    private ContatoModelo contMode = new ContatoModelo();;
-    private  List<ContatoModelo> lista = new VirtualFlow.ArrayLinkedList<>();
-    
-    public ContatoBean (){
-     buscar();
-    contMode = new ContatoModelo();
- }
+
+    private ContatoDao contDao;
+    private ContatoModelo contMode;
+    private ArrayList<ContatoModelo> lista;
+
+    public ContatoBean() {
+        //buscar();
+        contDao = new ContatoDao();
+        contMode = new ContatoModelo();
+        lista = contDao.busca();
+    }
+
     public ContatoDao getContDao() {
         return contDao;
     }
@@ -41,21 +42,24 @@ public class ContatoBean {
         this.contMode = contModelo;
     }
 
-    public List<ContatoModelo> getLista() {
+    public ArrayList<ContatoModelo> getLista() {
         return lista;
     }
 
-    public void setLista(List<ContatoModelo> lista) {
+    public void setLista(ArrayList<ContatoModelo> lista) {
         this.lista = lista;
     }
-    
-    public void salvarDados(){
-      //if(contMode.getId() == null){
-          contDao.salvar(contMode);
-          contMode = new ContatoModelo();
-    
-}
-    public void buscar(){
-    lista = contDao.busca();
+
+    public void salvarDados() {
+        //if(contMode.getId() == null){
+        contDao.salvar(contMode);
+        lista.add(contMode);
+        contMode = new ContatoModelo();
+
     }
- }
+
+    public void buscar() {
+        lista = contDao.busca();
+        lista.add(contMode);
+    }
+}
